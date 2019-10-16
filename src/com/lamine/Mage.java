@@ -3,6 +3,7 @@ package com.lamine;
 import java.util.Scanner;
 
 public class Mage extends Personnage{
+
     Scanner sc = new Scanner(System.in);
     private String name;
 

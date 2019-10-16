@@ -1,6 +1,8 @@
 package test;
 
 import com.lamine.Guerrier;
+import com.lamine.Mage;
+import com.lamine.Personnage;
 import org.junit.jupiter.api.Test;
 
 import java.io.ByteArrayInputStream;
@@ -60,6 +62,10 @@ class PersonnageTest {
         assertEquals(output.length() > "Intelligence du personnage ?\n".length(), false);
     }
 
+    @Test
+    public void Given_Correct_Message_When_Personnage_Est_Mort_then_get_True(){
 
+
+    }
 
 }
