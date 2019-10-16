@@ -62,10 +62,5 @@ class PersonnageTest {
         assertEquals(output.length() > "Intelligence du personnage ?\n".length(), false);
     }
 
-    @Test
-    public void Given_Correct_Message_When_Personnage_Est_Mort_then_get_True(){
-
-
-    }
 
 }
