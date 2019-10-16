@@ -3,17 +3,25 @@ package test;
 import com.lamine.Guerrier;
 import org.junit.jupiter.api.Test;
 
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
+import java.util.Scanner;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class PersonnageTest {
+    private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
+    Scanner sc = new Scanner(System.in);
 
     @Test
-    public final void Given_MessageGuerrier_When_displayChoiSelected_Then_DisplayMessageGuerrier(){
-        Guerrier guerrier = new Guerrier(10,10,0,0,"Joueur 1");
-        guerrier.choixDeClassJoueur(1);
-        guerrier.sePrsenter("Joueur "+ 1);
-        assertEquals("Création du Personnage du Joueur 1 \n", guerrier.toString().replace("\r\n", "\n"));
-        assertEquals("Woarg je suis le Guerrier Joueur 1 niveau 10 je possède  50 de vitalité, 10 de force, 0 agilité et 0 intelligence ! \n", guerrier.toString().replace("\r\n", "\n"));
+     public void Ginven_Correct_Messag_When_DisplayNiveauPersonnage_Then_DisplayCorrectProcess(){
+        System.setIn(new ByteArrayInputStream("10\n".getBytes()));
+        Guerrier guerrier = new Guerrier("Joueur 1");
+        guerrier.remplieConditionsNiveau();
+        String output = outContent.toString().replace("\r\n", "\n");
+        assertEquals(output.endsWith(""), true);
+        assertEquals(output.length() > "Niveau du personnage ?\n".length(), false);
     }
+
+    
 }
