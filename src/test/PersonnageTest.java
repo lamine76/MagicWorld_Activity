@@ -46,10 +46,7 @@ class PersonnageTest {
         System.setIn(new ByteArrayInputStream("0\n".getBytes()));
         Guerrier guerrier = new Guerrier("Joueur 1");
         guerrier.remplireConditionsIntelligence();
-
-        String output = outContent.toString().replace("\r\n", "\n");
-        assertEquals(output.endsWith(""), true);
-        assertEquals(output.length() > "Intelligence du personnage ?\n".length(), false);
+        assertEquals( true,outContent.toString().isEmpty());
     }
 
 

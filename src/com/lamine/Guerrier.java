@@ -33,7 +33,7 @@ public class Guerrier extends Personnage {
      * Attaque spéciale Guerrier avec Dégât égale à deux fois sa force contre son advesaire mais lui côute aussi la moitier de sa force en vie et oui il faut payer lol!!!
      * @param cible advesaire en parametres
      */
-    private void couDeRage(Personnage cible){
+    public void couDeRage(Personnage cible){
         System.out.println(this.getName() + " utilise coup de rage et inflige "+this.getForce()*2+ " de dommages.");
         cible.recevoirDegat(this.force*2);
         this.vie -= this.force/2;

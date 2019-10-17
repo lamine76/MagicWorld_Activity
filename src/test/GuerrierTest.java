@@ -18,15 +18,22 @@ class GuerrierTest {
    public void testGuerrierJoueurAttaqueBasique(){
        Guerrier guerrier = new Guerrier("Joueur 1");
        guerrier.sePrsenter("Joueur 1");
-       String output = outContent.toString().replace("\r\n", "\n");
-       assertEquals(output.endsWith(""), true);
-
+       assertEquals( true,outContent.toString().isEmpty());
    }
 
    @Test
     public void testGuerrierAttaqueBasique(){
        Guerrier guerrier = new Guerrier("Joueur 1");
-
+       Mage mage = new Mage("Joueur 2");
+       guerrier.couDepee(mage);
+       assertEquals( true,outContent.toString().isEmpty());
    }
 
+    @Test
+    public void testGuerrierAttaqueSpeciale(){
+        Guerrier guerrier = new Guerrier("Joueur 1");
+        Mage mage = new Mage("Joueur 2");
+        guerrier.couDeRage(mage);
+        assertEquals( true,outContent.toString().isEmpty());
+    }
 }
