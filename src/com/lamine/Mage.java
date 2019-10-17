@@ -20,7 +20,7 @@ public class Mage extends Personnage{
      * @param cible le joueur adverse
      */
 
-    private void bouleDeFeu(Personnage cible){
+    public void bouleDeFeu(Personnage cible){
         System.out.println(this.getName() + " utilise boule de feu et inflige "+this.getIntelligence()+ " de dommage.");
         cible.recevoirDegat(this.intelligence);
         while (cible.estMort()) {
@@ -32,9 +32,8 @@ public class Mage extends Personnage{
     /**
      * attaque special du Mage qui lui procure deux fois de son intelligence de vie supplimentaire
      */
-    private void soin(){
+    public void soin(){
         this.vie += this.intelligence*2;
-
         //pour éviter que la vie depasse la limite
         if (this.vie > this.niveau*5) {
             this.vie = this.niveau*5;

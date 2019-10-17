@@ -15,7 +15,7 @@ class GuerrierTest {
     Scanner sc = new Scanner(System.in);
 
    @Test
-   public void testGuerrierJoueurAttaqueBasique(){
+   public void testGuerrierPresentation(){
        Guerrier guerrier = new Guerrier("Joueur 1");
        guerrier.sePrsenter("Joueur 1");
        assertEquals( true,outContent.toString().isEmpty());

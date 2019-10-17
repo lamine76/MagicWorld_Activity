@@ -13,7 +13,8 @@ public class Rôdeur extends Personnage {
      * @param cible adversaire
      */
 
-    private void tireAlarc(Personnage cible){
+    public void tireAlarc(Personnage cible){
+        System.out.println(this.getName() + " utilise tire à l'arc et inflige "+this.getForce()+ " de dommages.");
         cible.recevoirDegat(this.agilite);
         while (cible.estMort()) {
             System.out.println(cible.getName()+" a perdu !");
@@ -24,7 +25,8 @@ public class Rôdeur extends Personnage {
     /**
      * Attaque spéciale Rôdeur qui lui procure la moitier de son niveau en vie
      */
-    private void concentration(){
+    public void concentration(){
+        System.out.println(this.getName() + " utilise concentration et gagne "+this.niveau/2+ " de vie.");
         this.agilite += this.niveau/2;
         if (this.agilite > this.niveau-(this.force+this.intelligence)) this.agilite = this.niveau-(this.force+this.intelligence); //l'agilité doit avoir un maximum à ne pas dépasser
     }
