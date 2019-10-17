@@ -18,7 +18,7 @@ public class Guerrier extends Personnage {
      * Attaque basique Guerrier avec degâts contre l'adversaire equivalente à sa force
      * @param cible adversaire
      */
-    private void couDepee(Personnage cible){
+    public void couDepee(Personnage cible){
         System.out.println(this.getName() + " utilise coup d'Epée et inflige "+this.getForce()+ " de dommages.");
         cible.recevoirDegat(this.force);
 
